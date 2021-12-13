@@ -53,7 +53,7 @@ func PostMail(c *gin.Context) {
 		return
 	}
 	//fmt.Println(json.Content, json.Contacts)
-	c.JSON(http.StatusOK, gin.H{"status": &json})
+	//c.JSON(http.StatusOK, gin.H{"status": &json})
 	user := "账号@qq.com"
 	password := "密码"
 	host := "smtp.qq.com:25"
@@ -67,13 +67,13 @@ func PostMail(c *gin.Context) {
 	}
 	//println(json.Contacts)
 	to := json.Contacts
-	//if strings.TrimSpace(to) == "" {
-	//	fmt.Println("Send mail error!,发送人为空")
-	//	c.JSON(http.StatusOK, gin.H{
-	//		"error": "Send mail error!,发送人为空",
-	//	})
-	//	return
-	//}
+	if to[0] == "" {
+		fmt.Println("Send mail error!,发送人为空")
+		c.JSON(http.StatusOK, gin.H{
+			"error": "Send mail error!,发送人为空",
+		})
+		return
+	}
 	subject := json.Subject
 	if strings.TrimSpace(subject) == "" {
 		fmt.Println("Send mail error!标题为空")
@@ -103,32 +103,19 @@ func PostMail(c *gin.Context) {
 		//log.Printf("接收人：", s+"\n"+"标题:", json.Subject+"\n", "发送内容：", json.Content+"\n")
 		fmt.Printf("接收人:%s \n 标题: %s \n 内容: %s \n", s, json.Subject, json.Content)
 		if err != nil {
-			fmt.Println("Send mail error!")
+			fmt.Println("Send mail error!\n")
 			c.JSON(http.StatusOK, gin.H{
-				"error": "Send mail error! !",
+				"error": "Send mail error! !\n",
 			})
 			//fmt.Println(err)
 		} else {
-			fmt.Println("Send mail success!")
+			fmt.Println("Send mail success!\n")
 			c.JSON(http.StatusOK, gin.H{
-				"success": "Send mail success! !",
+				"success": "Send mail success! !\n",
 			})
 		}
 
 	}
-	//err := SendToMail(user, sendUserName, password, host, string(to), subject, body, "html")
-	//if err != nil {
-	//	fmt.Println("Send mail error!")
-	//	c.JSON(http.StatusOK, gin.H{
-	//		"error": "Send mail error! !",
-	//	})
-	//	//fmt.Println(err)
-	//} else {
-	//	fmt.Println("Send mail success!")
-	//	c.JSON(http.StatusOK, gin.H{
-	//		"success": "Send mail success! !",
-	//	})
-	//}
 
 }
 
