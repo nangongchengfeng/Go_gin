@@ -1,0 +1,11 @@
+2021-12-25T13:38:43.796+0800	INFO	app/send.go:114	接收人: 1794748404@qq.com ,标题: 艾达王, 内容: 你好啊<br>换行吧
+2021-12-25T13:38:43.821+0800	INFO	app/send.go:125	success 调用者IP: 10.10.10.3 ,Send mail success! !
+2021-12-25T13:39:12.560+0800	ERROR	app/send.go:56	Error: Key: 'User.Source' Error:Field validation for 'Source' failed on the 'required' tag
+2021-12-25T13:39:25.259+0800	ERROR	app/send.go:69	Send mail error!,source 认证失败
+2021-12-25T13:41:15.198+0800	DEBUG	app/send.go:47	调用 PostMail 接口Api，调用者IP： 10.10.10.3 
+2021-12-25T13:41:15.226+0800	ERROR	app/send.go:69	Send mail error!,source 认证失败
+2021-12-25T13:41:33.199+0800	DEBUG	app/send.go:47	调用 PostMail 接口Api，调用者IP： 10.10.10.3 
+2021-12-25T13:41:33.200+0800	ERROR	app/send.go:56	Error: Key: 'User.Source' Error:Field validation for 'Source' failed on the 'required' tag
+2021-12-25T13:41:37.315+0800	DEBUG	app/send.go:47	调用 PostMail 接口Api，调用者IP： 10.10.10.3 
+2021-12-25T13:41:38.069+0800	INFO	app/send.go:114	接收人: 1794748404@qq.com ,标题: 艾达王, 内容: 你好啊<br>换行吧
+2021-12-25T13:41:38.069+0800	INFO	app/send.go:125	success 调用者IP: 10.10.10.3 ,Send mail success! !
