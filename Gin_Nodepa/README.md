@@ -1,4 +1,4 @@
-# bubble清单
+[Gin_Nodepa](https://github.com/nangongchengfeng/Go_gin/commit/ea6031c31ee47be36e5d4c731f81b03477a99336)清单
 
 一个基于gin+gorm开发的练手小项目，通过该项目可初识go web开发该有的姿势。
 
